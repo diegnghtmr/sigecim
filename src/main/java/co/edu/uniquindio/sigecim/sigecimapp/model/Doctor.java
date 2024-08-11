@@ -14,5 +14,4 @@ public class Doctor extends Persona{
     private String especialidad;
     private int experiencia;
     private List<Cita> listaCitas;
-
 }

@@ -13,5 +13,4 @@ import java.util.List;
 public class Paciente extends Persona{
     private String eps;
     private List<Cita> listaCitas;
-
 }

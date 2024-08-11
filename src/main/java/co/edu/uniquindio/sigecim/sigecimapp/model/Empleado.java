@@ -10,5 +10,4 @@ import lombok.EqualsAndHashCode;
 
 public class Empleado extends Persona{
     private String contrasenia;
-
 }

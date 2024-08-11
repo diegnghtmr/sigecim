@@ -12,7 +12,7 @@ public class SigecimApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SigecimApplication.class.getResource("empleado-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hospital San Oscar de Dios!");
+        stage.setTitle("Hospital San Oscar de Dios! \uD83C\uDFE5");
         stage.setScene(scene);
         stage.show();
     }

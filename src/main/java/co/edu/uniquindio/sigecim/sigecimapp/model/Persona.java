@@ -13,5 +13,4 @@ public abstract class Persona {
     private String correo;
     private LocalDate fechaNacimiento;
     private String direccion;
-
 }

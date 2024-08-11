@@ -14,5 +14,4 @@ public class Sigecim {
     private List<Doctor> listaDoctores;
     private List<Paciente> listaPacientes;
     private List<Cita> listaCitas;
-
 }

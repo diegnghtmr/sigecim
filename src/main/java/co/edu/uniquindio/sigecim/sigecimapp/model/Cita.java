@@ -15,5 +15,4 @@ public class Cita {
     private String motivo;
     private Paciente paciente;
     private Doctor doctor;
-
 }
