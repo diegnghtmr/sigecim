@@ -1,4 +1,10 @@
 package co.edu.uniquindio.sigecim.sigecimapp.viewController;
 
-public class EmpleadoViewController {
+import javafx.fxml.FXML;
+
+public class EmpleadoViewController extends BaseViewController {
+    @FXML
+    void initialize() {
+
+    }
 }

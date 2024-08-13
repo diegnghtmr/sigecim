@@ -2,7 +2,7 @@ package co.edu.uniquindio.sigecim.sigecimapp.viewController.services;
 
 import javafx.event.ActionEvent;
 
-public interface IBaseViewController {
+public interface IBaseViewController <T>{
 
     void onNuevo(ActionEvent event);
 
@@ -20,8 +20,10 @@ public interface IBaseViewController {
 
     void listenerSelection();
 
-    void validateForm();
+    boolean validarDatos(T object);
 
-    void clearData();
+    void limpiarCampos();
+
+    void deseleccionarTabla();
 
 }

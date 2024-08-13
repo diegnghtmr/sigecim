@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public abstract class BaseViewController implements IBaseViewController {
+public abstract class BaseViewController {
 
     @FXML
     private ResourceBundle resources;
@@ -17,7 +17,7 @@ public abstract class BaseViewController implements IBaseViewController {
     @FXML
     private URL location;
 
-    private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {
+    protected void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {
         Alert aler = new Alert(alertType);
         aler.setTitle(titulo);
         aler.setHeaderText(header);
@@ -25,7 +25,7 @@ public abstract class BaseViewController implements IBaseViewController {
         aler.showAndWait();
     }
 
-    private boolean mostrarMensajeConfirmacion(String mensaje) {
+    protected boolean mostrarMensajeConfirmacion(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText(null);
         alert.setTitle("Confirmación");
