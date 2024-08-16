@@ -18,4 +18,8 @@ public class Doctor extends Persona{
     private String especialidad;
     private int experiencia;
     private final List<Cita> listaCitas = new ArrayList<>();
+
+    public Doctor() {
+
+    }
 }

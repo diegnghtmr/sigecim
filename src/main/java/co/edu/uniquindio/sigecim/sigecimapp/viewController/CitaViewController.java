@@ -107,13 +107,13 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
 
     public void initDataBinding() {
         tcDoctor.setCellValueFactory(cellData -> new SimpleStringProperty(
-                cellData.getValue().doctor().nombre()));
+                cellData.getValue().doctor() != null ? cellData.getValue().doctor().nombre() : ""));
         tcDocumentoDoctor.setCellValueFactory(cellData -> new SimpleStringProperty(
-                cellData.getValue().doctor().documento()));
+                cellData.getValue().doctor() != null ? cellData.getValue().doctor().documento() : ""));
         tcPaciente.setCellValueFactory(cellData -> new SimpleStringProperty(
-                cellData.getValue().paciente().nombre()));
+                cellData.getValue().paciente() != null ? cellData.getValue().paciente().nombre() : ""));
         tcDocumentoPaciente.setCellValueFactory(cellData -> new SimpleStringProperty(
-                cellData.getValue().paciente().documento()));
+                cellData.getValue().paciente() != null ? cellData.getValue().paciente().documento() : ""));
         tcFecha.setCellValueFactory(cellData -> new SimpleStringProperty(
                 cellData.getValue().fecha()));
         tcHora.setCellValueFactory(cellData -> new SimpleStringProperty(

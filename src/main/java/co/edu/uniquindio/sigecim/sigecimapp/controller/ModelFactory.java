@@ -35,9 +35,11 @@ public class ModelFactory {
     private void cargarDatosBase() {
         sigecim = SigecimUtils.inicializarDatos();
     }
+
     public List<CitaDto> obtenerCitas() {
         return sigecimMapper.getCitasDto(sigecim.getListaCitas());
     }
+
     public boolean agregarCita(CitaDto citaDto) {
         try {
             if (!sigecim.verificarCitaExistente(citaDto.fecha(), citaDto.hora())) {
