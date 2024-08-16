@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10b11bc9-de8b-44e6-916c-aefcf577c807" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/ModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/ModelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Paciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/CitaViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/CitaViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/mapping/mappers/ISigecimMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/mapping/mappers/ISigecimMapper.java" afterDir="false" />
     </list>
     <list id="6c4dae35-3457-4755-a8fc-0f538dd10e44" name="Changes by mcami" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -182,11 +178,32 @@
       <workItem from="1723797062730" duration="332000" />
       <workItem from="1723797584423" duration="2657000" />
       <workItem from="1723841949637" duration="976000" />
-      <workItem from="1723842962407" duration="2169000" />
+      <workItem from="1723842962407" duration="3651000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/CitaViewController.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/CitaController.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/ModelFactory.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
