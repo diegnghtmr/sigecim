@@ -1,8 +1,6 @@
 package co.edu.uniquindio.sigecim.sigecimapp.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -10,6 +8,8 @@ import java.time.LocalTime;
 @Setter
 @Getter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class Cita {
     private LocalDate fecha;

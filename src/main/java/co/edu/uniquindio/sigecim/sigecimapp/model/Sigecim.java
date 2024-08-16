@@ -3,23 +3,26 @@ package co.edu.uniquindio.sigecim.sigecimapp.model;
 import co.edu.uniquindio.sigecim.sigecimapp.exceptions.CitaException;
 import co.edu.uniquindio.sigecim.sigecimapp.exceptions.DoctorException;
 import co.edu.uniquindio.sigecim.sigecimapp.exceptions.PacienteException;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
+@Setter
 @Getter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class Sigecim {
-    private final String nombre;
-    private List<Empleado> listaEmpleados;
-    private List<Doctor> listaDoctores;
-    private List<Paciente> listaPacientes;
-    private List<Cita> listaCitas;
+    private  String nombre;
+    private final List<Empleado> listaEmpleados = new ArrayList<>();
+    private final List<Doctor> listaDoctores = new ArrayList<>();
+    private final List<Paciente> listaPacientes = new ArrayList<>();
+    private final List<Cita> listaCitas = new ArrayList<>();
 
     public boolean verificarCitaExistente(String fecha, String hora) throws CitaException {
         LocalDate fechaLocalDate = LocalDate.parse(fecha, DateTimeFormatter.ISO_DATE);

@@ -6,24 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="10b11bc9-de8b-44e6-916c-aefcf577c807" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/CitaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/CitaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/DoctorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/PacienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/PacienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/exceptions/CitaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/exceptions/CitaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/exceptions/DoctorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/exceptions/DoctorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/exceptions/PacienteException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/exceptions/PacienteException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/mapping/mappers/ISigecimMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/mapping/mappers/ISigecimMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Cita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Doctor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Empleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Paciente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Persona.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Sigecim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/model/Sigecim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/utils/ModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/ModelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/CitaViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/CitaViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/DoctorViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/DoctorViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/PacienteViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/PacienteViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <list id="6c4dae35-3457-4755-a8fc-0f538dd10e44" name="Changes by mcami" comment="" />
@@ -52,6 +40,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="openjdk-22" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -72,6 +63,7 @@
     &quot;Maven.sigecim-app [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.sigecim-app [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.sigecim-app [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.sigecim-app [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
     &quot;Maven.sigecim-app [package].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -85,7 +77,10 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -183,7 +178,12 @@
       <workItem from="1723362026772" duration="84000" />
       <workItem from="1723590927818" duration="14319000" />
       <workItem from="1723754812033" duration="373000" />
-      <workItem from="1723770043804" duration="3191000" />
+      <workItem from="1723770043804" duration="3656000" />
+      <workItem from="1723794524097" duration="35000" />
+      <workItem from="1723795327143" duration="407000" />
+      <workItem from="1723797062730" duration="332000" />
+      <workItem from="1723797584423" duration="2657000" />
+      <workItem from="1723841949637" duration="736000" />
     </task>
     <servers />
   </component>
