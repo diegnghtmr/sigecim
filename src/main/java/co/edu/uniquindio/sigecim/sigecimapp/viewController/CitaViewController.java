@@ -146,29 +146,30 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
 
     public boolean validarDatos(CitaDto citaDto) {
         String mensaje = "";
-        if (dpFecha.getValue() == null) {
-            mensaje += "La fecha es inválida. Por favor, seleccione una fecha.\n";
+        if (citaDto.fecha() == null || citaDto.fecha().isEmpty()) {
+            mensaje += "La fecha es obligatoria\n";
         }
-        if (cbHora.getValue() == null || cbHora.getValue().equals("")) {
-            mensaje += "La hora es inválida. Por favor, seleccione una hora.\n";
+        if (citaDto.hora() == null || citaDto.hora().isEmpty()) {
+            mensaje += "La hora es obligatoria\n";
         }
-        if (cbDoctor.getValue() == null) {
-            mensaje += "El doctor es inválido. Por favor, seleccione un doctor.\n";
+        if (citaDto.doctor() == null) {
+            mensaje += "El doctor es obligatorio\n";
         }
-        if (cbPaciente.getValue() == null) {
-            mensaje += "El paciente es inválido. Por favor, seleccione un paciente.\n";
+        if (citaDto.paciente() == null) {
+            mensaje += "El paciente es obligatorio\n";
         }
-        if (txtaMotivo.getText() == null || txtaMotivo.getText().equals("")) {
-            mensaje += "El motivo es inválido. Por favor, ingrese el motivo de la cita.\n";
+        if (citaDto.motivo() == null || citaDto.motivo().isEmpty()) {
+            mensaje += "El motivo es obligatorio\n";
         }
-        if (mensaje.equals("")) {
+        if (mensaje.isEmpty()) {
             return true;
         } else {
-            mostrarMensaje("Notificación cita", "Datos inválidos",
-                    mensaje, Alert.AlertType.WARNING);
+            mostrarMensaje("Notificación cita",
+                    "Datos inválidos", mensaje, Alert.AlertType.WARNING);
             return false;
         }
     }
+
 
     public void limpiarCampos(){
         dpFecha.setValue(null);
@@ -196,8 +197,8 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
                         "La cita no pudo ser agregada", Alert.AlertType.ERROR);
             }
         } else {
-            mostrarMensaje("Error cita", "Cita no agregada",
-                    "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+            mostrarMensaje("Error cita", "Datos inválidos",
+                    "Por favor, ingrese datos válidos", Alert.AlertType.ERROR);
         }
     }
 
@@ -251,8 +252,8 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
                             "La cita no pudo ser actualizada", Alert.AlertType.ERROR);
                 }
             } else {
-                mostrarMensaje("Error cita", "Cita no actualizada",
-                        "Los datos ingresados son invalidos", Alert.AlertType.ERROR);
+                mostrarMensaje("Error cita", "Datos inválidos",
+                        "Por favor, ingrese datos válidos", Alert.AlertType.ERROR);
             }
         }
     }

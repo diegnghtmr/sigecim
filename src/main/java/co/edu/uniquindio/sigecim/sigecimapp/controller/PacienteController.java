@@ -1,7 +1,6 @@
 package co.edu.uniquindio.sigecim.sigecimapp.controller;
 
 import co.edu.uniquindio.sigecim.sigecimapp.controller.services.IBaseController;
-import co.edu.uniquindio.sigecim.sigecimapp.mapping.dto.DoctorDto;
 import co.edu.uniquindio.sigecim.sigecimapp.mapping.dto.PacienteDto;
 
 import java.util.List;

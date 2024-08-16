@@ -4,14 +4,14 @@ import co.edu.uniquindio.sigecim.sigecimapp.exceptions.CitaException;
 import co.edu.uniquindio.sigecim.sigecimapp.exceptions.DoctorException;
 import co.edu.uniquindio.sigecim.sigecimapp.exceptions.PacienteException;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-@Data
+@Getter
 @Builder
 
 public class Sigecim {

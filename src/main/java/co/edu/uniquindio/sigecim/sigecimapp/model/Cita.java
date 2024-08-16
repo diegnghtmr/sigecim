@@ -1,12 +1,14 @@
 package co.edu.uniquindio.sigecim.sigecimapp.model;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Data
+@Setter
+@Getter
 @Builder
 
 public class Cita {

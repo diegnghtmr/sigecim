@@ -1,11 +1,12 @@
 package co.edu.uniquindio.sigecim.sigecimapp.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Setter
+@Getter
 @SuperBuilder
 
 public class Empleado extends Persona{

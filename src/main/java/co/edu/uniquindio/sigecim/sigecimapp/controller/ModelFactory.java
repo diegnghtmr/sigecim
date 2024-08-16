@@ -1,4 +1,4 @@
-package co.edu.uniquindio.sigecim.sigecimapp.utils;
+package co.edu.uniquindio.sigecim.sigecimapp.controller;
 
 import co.edu.uniquindio.sigecim.sigecimapp.exceptions.CitaException;
 import co.edu.uniquindio.sigecim.sigecimapp.exceptions.DoctorException;
@@ -7,10 +7,8 @@ import co.edu.uniquindio.sigecim.sigecimapp.mapping.dto.CitaDto;
 import co.edu.uniquindio.sigecim.sigecimapp.mapping.dto.DoctorDto;
 import co.edu.uniquindio.sigecim.sigecimapp.mapping.dto.PacienteDto;
 import co.edu.uniquindio.sigecim.sigecimapp.mapping.mappers.ISigecimMapper;
-import co.edu.uniquindio.sigecim.sigecimapp.model.Cita;
-import co.edu.uniquindio.sigecim.sigecimapp.model.Doctor;
-import co.edu.uniquindio.sigecim.sigecimapp.model.Paciente;
-import co.edu.uniquindio.sigecim.sigecimapp.model.Sigecim;
+import co.edu.uniquindio.sigecim.sigecimapp.model.*;
+import co.edu.uniquindio.sigecim.sigecimapp.utils.SigecimUtils;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,9 +24,6 @@ public class ModelFactory {
     private static class SingletonHolder {
 
         private static final ModelFactory eINSTANCE = new ModelFactory();
-
-
-
 
     }
     public static ModelFactory getInstance(){
