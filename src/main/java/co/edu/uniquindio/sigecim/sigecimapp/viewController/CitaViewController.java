@@ -1,3 +1,5 @@
+// CitaViewController.java
+
 package co.edu.uniquindio.sigecim.sigecimapp.viewController;
 
 import co.edu.uniquindio.sigecim.sigecimapp.controller.CitaController;
@@ -13,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.time.LocalDate;
+import java.util.function.Function;
 
 public class CitaViewController extends BaseViewController implements IBaseViewController<CitaDto> {
     CitaController citaController;
@@ -100,6 +103,7 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
     public void initView() {
         initDataBinding();
         obtenerCitas();
+        cargarDatosComboBox();
         tblCita.getItems().clear();
         tblCita.setItems(listaCitasDto);
         listenerSelection();
@@ -124,6 +128,42 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
 
     private void obtenerCitas() {
         listaCitasDto.addAll(citaController.obtenerCitas());
+    }
+
+    private void cargarDatosComboBox() {
+        ObservableList<DoctorDto> listaDoctores = FXCollections.observableArrayList(
+                citaController.obtenerDoctores());
+        ObservableList<PacienteDto> listaPacientes = FXCollections.observableArrayList(
+                citaController.obtenerPacientes());
+        ObservableList<String> listaHorarios = FXCollections.observableArrayList(
+                citaController.obtenerHorariosDisponibles());
+
+        initializeComboBox(cbDoctor, listaDoctores,
+                doctor -> doctor.nombre() + " " + doctor.documento());
+        initializeComboBox(cbPaciente, listaPacientes,
+                paciente -> paciente.nombre() + " " + paciente.documento());
+        initializeComboBox(cbHora, listaHorarios,
+                Function.identity());
+    }
+
+    private <T> void initializeComboBox(ComboBox<T> comboBox,
+                                        ObservableList<T> items,
+                                        Function<T, String> displayFunction) {
+        comboBox.setItems(items);
+        comboBox.setCellFactory(lv -> new ListCell<T>() {
+            @Override
+            protected void updateItem(T item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty ? "" : displayFunction.apply(item));
+            }
+        });
+        comboBox.setButtonCell(new ListCell<T>() {
+            @Override
+            protected void updateItem(T item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty ? "" : displayFunction.apply(item));
+            }
+        });
     }
 
     public void listenerSelection() {
@@ -169,7 +209,6 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
             return false;
         }
     }
-
 
     public void limpiarCampos(){
         dpFecha.setValue(null);
@@ -257,5 +296,4 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
             }
         }
     }
-
 }

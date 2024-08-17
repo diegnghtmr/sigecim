@@ -4,6 +4,11 @@ import co.edu.uniquindio.sigecim.sigecimapp.model.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SigecimUtils {
     public static Sigecim inicializarDatos() {
@@ -263,4 +268,14 @@ public class SigecimUtils {
         return sigecim;
     }
 
+    public static List<String> obtenerHorariosDisponibles() {
+        final LocalTime horaInicio = LocalTime.of(8, 0); // 08:00:00
+        final LocalTime horaFin = LocalTime.of(17, 0); // 17:00:00
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+        return Stream.iterate(horaInicio, time -> time.plusMinutes(30))
+                .limit((horaFin.toSecondOfDay() - horaInicio.toSecondOfDay()) / 1800 + 1)
+                .map(time -> time.format(formatter))
+                .collect(Collectors.toList());
+    }
 }

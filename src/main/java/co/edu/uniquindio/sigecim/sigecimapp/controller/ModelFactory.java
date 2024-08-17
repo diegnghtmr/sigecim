@@ -36,6 +36,10 @@ public class ModelFactory {
         sigecim = SigecimUtils.inicializarDatos();
     }
 
+    public List<String> obtenerHorariosDisponibles() {
+        return SigecimUtils.obtenerHorariosDisponibles();
+    }
+
     public List<CitaDto> obtenerCitas() {
         return sigecimMapper.getCitasDto(sigecim.getListaCitas());
     }

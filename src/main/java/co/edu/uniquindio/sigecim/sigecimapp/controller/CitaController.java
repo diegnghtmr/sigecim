@@ -1,6 +1,8 @@
 package co.edu.uniquindio.sigecim.sigecimapp.controller;
 
 import co.edu.uniquindio.sigecim.sigecimapp.mapping.dto.CitaDto;
+import co.edu.uniquindio.sigecim.sigecimapp.mapping.dto.DoctorDto;
+import co.edu.uniquindio.sigecim.sigecimapp.mapping.dto.PacienteDto;
 
 import java.util.List;
 
@@ -25,4 +27,15 @@ public class CitaController extends BaseController {
         return modelFactory.actualizarCita(citaDtoActual, citaDtoNueva);
     }
 
+    public List<DoctorDto> obtenerDoctores() {
+        return modelFactory.obtenerDoctores();
+    }
+
+    public List<PacienteDto> obtenerPacientes() {
+        return modelFactory.obtenerPacientes();
+    }
+
+    public List<String> obtenerHorariosDisponibles() {
+        return modelFactory.obtenerHorariosDisponibles();
+    }
 }
