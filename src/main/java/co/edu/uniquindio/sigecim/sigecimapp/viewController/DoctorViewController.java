@@ -270,11 +270,12 @@ public class DoctorViewController extends BaseViewController implements IBaseVie
         DoctorDto doctorDto = construirDoctor();
         if (doctorSeleccionado != null) {
             if (validarDatos(doctorDto)) {
+                int selectedIndex = tblDoctor.getSelectionModel().getSelectedIndex();
                 doctorActualizado = doctorController.actualizar(doctorSeleccionado.documento(), doctorDto);
                 if (doctorActualizado) {
-                    listaDoctoresDto.remove(doctorSeleccionado);
-                    listaDoctoresDto.add(doctorDto);
+                    listaDoctoresDto.set(selectedIndex, doctorDto);
                     tblDoctor.refresh();
+                    tblDoctor.getSelectionModel().select(selectedIndex);
                     mostrarMensaje("Notificación doctor", "Doctor actualizado",
                             "El doctor ha sido actualizado con éxito", Alert.AlertType.INFORMATION);
                     deseleccionarTabla();

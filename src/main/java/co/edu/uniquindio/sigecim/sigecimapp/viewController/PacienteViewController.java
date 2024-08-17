@@ -213,10 +213,10 @@ public class PacienteViewController extends BaseViewController implements IBaseV
         return new PacienteDto(
                 txtNombre.getText(),
                 txtDocumento.getText(),
-                dpFechaNacimiento.getValue().toString(),
-                txtDireccion.getText(),
                 txtTelefono.getText(),
                 txtCorreoElectronico.getText(),
+                dpFechaNacimiento.getValue().toString(),
+                txtDireccion.getText(),
                 txtEps.getText(),
                 new ArrayList<CitaDto>());
     }
@@ -248,11 +248,12 @@ public class PacienteViewController extends BaseViewController implements IBaseV
         PacienteDto pacienteDto = construirPaciente();
         if (pacienteSeleccionado != null) {
             if (validarDatos(pacienteDto)) {
+                int selectedIndex = tblPaciente.getSelectionModel().getSelectedIndex();
                 pacienteActualizado = pacienteController.actualizar(pacienteSeleccionado.documento(), pacienteDto);
                 if (pacienteActualizado) {
-                    listaPacientesDto.remove(pacienteSeleccionado);
-                    listaPacientesDto.add(pacienteDto);
+                    listaPacientesDto.set(selectedIndex, pacienteDto);
                     tblPaciente.refresh();
+                    tblPaciente.getSelectionModel().select(selectedIndex);
                     mostrarMensaje("Notificación paciente", "Paciente actualizado",
                             "El paciente ha sido actualizado con éxito", Alert.AlertType.INFORMATION);
                     deseleccionarTabla();

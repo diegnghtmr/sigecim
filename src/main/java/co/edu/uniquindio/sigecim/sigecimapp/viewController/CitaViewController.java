@@ -277,11 +277,12 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
         CitaDto citaDto = construirCitaDto();
         if (citaSeleccionada != null) {
             if (validarDatos(citaDto)) {
+                int selectedIndex = tblCita.getSelectionModel().getSelectedIndex();
                 citaActualizada = citaController.actualizar(citaSeleccionada, citaDto);
                 if (citaActualizada) {
-                    listaCitasDto.remove(citaSeleccionada);
-                    listaCitasDto.add(citaDto);
+                    listaCitasDto.set(selectedIndex, citaDto);
                     tblCita.refresh();
+                    tblCita.getSelectionModel().select(selectedIndex);
                     mostrarMensaje("Notificación cita", "Cita actualizada",
                             "La cita ha sido actualizada con éxito", Alert.AlertType.INFORMATION);
                     deseleccionarTabla();
