@@ -75,61 +75,61 @@ public class SigecimUtils {
                 .direccion("calle 25").especialidad("Endocrinología").experiencia(5).build();
 
         Paciente paciente1 = Paciente.builder()
-                .nombre("Jhon Alejandro").documento("1048385436").telefono("3136843754")
+                .nombre("Juan Alejandro").documento("1048385436").telefono("3136843754")
                 .correo("jhonalejo123@example.com")
                 .fechaNacimiento(LocalDate.of(1990, 1, 1))
                 .direccion("calle 13").eps("SURA").build();
 
         Paciente paciente2 = Paciente.builder()
-                .nombre("Maria Fernanda").documento("1667385437").telefono("3201234567")
+                .nombre("Fernanda Elisabeth").documento("1667385437").telefono("3201234567")
                 .correo("mariafernandauwu@example.com")
                 .fechaNacimiento(LocalDate.of(1985, 5, 15))
                 .direccion("avenida 45").eps("SANITAS").build();
 
         Paciente paciente3 = Paciente.builder()
-                .nombre("Carlos Andres").documento("1961385438").telefono("3109876543")
+                .nombre("Fabian Andres").documento("1961385438").telefono("3109876543")
                 .correo("carlosandresaa@example.com")
                 .fechaNacimiento(LocalDate.of(1978, 3, 22))
                 .direccion("carrera 7").eps("COOMEVA").build();
 
         Paciente paciente4 = Paciente.builder()
-                .nombre("Laura Camila").documento("1000385439").telefono("3001122334")
+                .nombre("Maria Camila").documento("1000385439").telefono("3001122334")
                 .correo("lauracamilita@example.com")
                 .fechaNacimiento(LocalDate.of(1992, 7, 30))
                 .direccion("calle 9").eps("NUEVA EPS").build();
 
         Paciente paciente5 = Paciente.builder()
-                .nombre("Juan David").documento("1128385440").telefono("3112233445")
+                .nombre("Juan Diego").documento("1128385440").telefono("3112233445")
                 .correo("juandd@example.com")
                 .fechaNacimiento(LocalDate.of(1988, 11, 11))
                 .direccion("avenida 10").eps("CAFESALUD").build();
 
         Paciente paciente6 = Paciente.builder()
-                .nombre("Ana Sofia").documento("1448385441").telefono("3123344556")
+                .nombre("Mariana Sofia").documento("1448385441").telefono("3123344556")
                 .correo("anasofiaaa@example.com")
                 .fechaNacimiento(LocalDate.of(1995, 2, 5))
                 .direccion("carrera 15").eps("FAMISANAR").build();
 
         Paciente paciente7 = Paciente.builder()
-                .nombre("Miguel Angel").documento("1554385442").telefono("3134455667")
+                .nombre("Angel David").documento("1554385442").telefono("3134455667")
                 .correo("miguelangelreal@example.com")
                 .fechaNacimiento(LocalDate.of(1983, 8, 19))
                 .direccion("calle 20").eps("SALUD TOTAL").build();
 
         Paciente paciente8 = Paciente.builder()
-                .nombre("Daniela Patricia").documento("1221385443").telefono("3145566778")
+                .nombre("Marcela ").documento("1221385443").telefono("3145566778")
                 .correo("danielapatriciaofficial@example.com")
                 .fechaNacimiento(LocalDate.of(1991, 4, 25))
                 .direccion("avenida 33").eps("COMPENSAR").build();
 
         Paciente paciente9 = Paciente.builder()
-                .nombre("Santiago Jose").documento("1467385444").telefono("3156677889")
+                .nombre("Jose Jose").documento("1467385444").telefono("3156677889")
                 .correo("santiagojosekkkk@example.com")
                 .fechaNacimiento(LocalDate.of(1986, 6, 14))
                 .direccion("carrera 21").eps("COLSUBSIDIO").build();
 
         Paciente paciente10 = Paciente.builder()
-                .nombre("Valentina Isabel").documento("1210385445").telefono("3167788990")
+                .nombre("Valeria Lucia").documento("1210385445").telefono("3167788990")
                 .correo("valentinaisabel01@example.com")
                 .fechaNacimiento(LocalDate.of(1993, 12, 3))
                 .direccion("calle 25").eps("CRUZ BLANCA").build();

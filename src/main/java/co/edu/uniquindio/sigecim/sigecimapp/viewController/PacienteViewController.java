@@ -154,6 +154,11 @@ public class PacienteViewController extends BaseViewController implements IBaseV
         }
         if (pacienteDto.fechaNacimiento() == null || pacienteDto.fechaNacimiento().isEmpty()) {
             mensaje += "La fecha de nacimiento es obligatoria\n";
+        } else {
+            LocalDate fechaNacimiento = LocalDate.parse(pacienteDto.fechaNacimiento());
+            if (fechaNacimiento.isAfter(LocalDate.now())) {
+                mensaje += "La fecha de nacimiento no puede ser una fecha futura\n";
+            }
         }
         if (pacienteDto.direccion() == null || pacienteDto.direccion().isEmpty()) {
             mensaje += "La dirección es obligatoria\n";
@@ -162,7 +167,7 @@ public class PacienteViewController extends BaseViewController implements IBaseV
             mensaje += "El teléfono es obligatorio\n";
         }
         if (pacienteDto.correo() == null || pacienteDto.correo().isEmpty()) {
-            mensaje += "El correo electrónico es obligatorio\n";
+            mensaje += "El correo es obligatorio\n";
         }
         if (pacienteDto.eps() == null || pacienteDto.eps().isEmpty()) {
             mensaje += "La EPS es obligatoria\n";
@@ -170,8 +175,7 @@ public class PacienteViewController extends BaseViewController implements IBaseV
         if (mensaje.isEmpty()) {
             return true;
         } else {
-            mostrarMensaje("Notificación paciente",
-                    "Datos inválidos", mensaje, Alert.AlertType.WARNING);
+            mostrarMensaje("Notificación paciente", "Datos inválidos", mensaje, Alert.AlertType.WARNING);
             return false;
         }
     }
@@ -203,19 +207,17 @@ public class PacienteViewController extends BaseViewController implements IBaseV
                 mostrarMensaje("Error paciente", "Paciente no agregado",
                         "El paciente no pudo ser agregado", Alert.AlertType.ERROR);
             }
-        } else {
-            mostrarMensaje("Error paciente", "Datos inválidos",
-                    "Por favor, ingrese datos válidos", Alert.AlertType.ERROR);
         }
     }
 
     private PacienteDto construirPaciente() {
+        String fechaNacimiento = dpFechaNacimiento.getValue() != null ? dpFechaNacimiento.getValue().toString() : "";
         return new PacienteDto(
                 txtNombre.getText(),
                 txtDocumento.getText(),
                 txtTelefono.getText(),
                 txtCorreoElectronico.getText(),
-                dpFechaNacimiento.getValue().toString(),
+                fechaNacimiento,
                 txtDireccion.getText(),
                 txtEps.getText(),
                 new ArrayList<CitaDto>());
@@ -248,6 +250,11 @@ public class PacienteViewController extends BaseViewController implements IBaseV
         PacienteDto pacienteDto = construirPaciente();
         if (pacienteSeleccionado != null) {
             if (validarDatos(pacienteDto)) {
+                if (!hayCambios(pacienteSeleccionado, pacienteDto)) {
+                    mostrarMensaje("Error paciente", "Sin cambios",
+                            "No se puede actualizar el paciente sin cambios", Alert.AlertType.ERROR);
+                    return;
+                }
                 int selectedIndex = tblPaciente.getSelectionModel().getSelectedIndex();
                 pacienteActualizado = pacienteController.actualizar(pacienteSeleccionado.documento(), pacienteDto);
                 if (pacienteActualizado) {
@@ -266,6 +273,19 @@ public class PacienteViewController extends BaseViewController implements IBaseV
                 mostrarMensaje("Error paciente", "Datos inválidos",
                         "Por favor, ingrese datos válidos", Alert.AlertType.ERROR);
             }
+        } else {
+            mostrarMensaje("Error paciente", "Paciente no seleccionado",
+                    "Por favor, seleccione un paciente", Alert.AlertType.ERROR);
         }
+    }
+
+    private boolean hayCambios(PacienteDto pacienteSeleccionado, PacienteDto pacienteDto) {
+        return !pacienteSeleccionado.nombre().equals(pacienteDto.nombre()) ||
+                !pacienteSeleccionado.documento().equals(pacienteDto.documento()) ||
+                !pacienteSeleccionado.fechaNacimiento().equals(pacienteDto.fechaNacimiento()) ||
+                !pacienteSeleccionado.direccion().equals(pacienteDto.direccion()) ||
+                !pacienteSeleccionado.telefono().equals(pacienteDto.telefono()) ||
+                !pacienteSeleccionado.correo().equals(pacienteDto.correo()) ||
+                !pacienteSeleccionado.eps().equals(pacienteDto.eps());
     }
 }

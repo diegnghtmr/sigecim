@@ -171,6 +171,11 @@ public class DoctorViewController extends BaseViewController implements IBaseVie
         }
         if (doctorDto.fechaNacimiento() == null || doctorDto.fechaNacimiento().isEmpty()) {
             mensaje += "La fecha de nacimiento es obligatoria\n";
+        } else {
+            LocalDate fechaNacimiento = LocalDate.parse(doctorDto.fechaNacimiento());
+            if (fechaNacimiento.isAfter(LocalDate.now().minusYears(18))) {
+                mensaje += "El doctor debe tener al menos 18 años\n";
+            }
         }
         if (doctorDto.direccion() == null || doctorDto.direccion().isEmpty()) {
             mensaje += "La dirección es obligatoria\n";
@@ -185,13 +190,12 @@ public class DoctorViewController extends BaseViewController implements IBaseVie
             mensaje += "La especialidad es obligatoria\n";
         }
         if (doctorDto.experiencia() < 0) {
-            mensaje += "La experiencia es obligatoria\n";
+            mensaje += "La experiencia no puede ser negativa\n";
         }
         if (mensaje.isEmpty()) {
             return true;
         } else {
-            mostrarMensaje("Notificación doctor",
-                    "Datos inválidos", mensaje, Alert.AlertType.WARNING);
+            mostrarMensaje("Notificación doctor", "Datos inválidos", mensaje, Alert.AlertType.WARNING);
             return false;
         }
     }
@@ -224,22 +228,21 @@ public class DoctorViewController extends BaseViewController implements IBaseVie
                 mostrarMensaje("Error doctor", "Doctor no agregado",
                         "El doctor no pudo ser agregado", Alert.AlertType.ERROR);
             }
-        } else {
-            mostrarMensaje("Error doctor", "Datos inválidos",
-                    "Por favor, ingrese datos válidos", Alert.AlertType.ERROR);
         }
     }
 
     private DoctorDto construirDoctor() {
+        String fechaNacimiento = dpFecha.getValue() != null ? dpFecha.getValue().toString() : "";
+        int experiencia = txtExperiencia.getText() != null && !txtExperiencia.getText().isEmpty() ? Integer.parseInt(txtExperiencia.getText()) : (-1);
         return new DoctorDto(
                 txtNombre.getText(),
                 txtDocumento.getText(),
                 txtTelefono.getText(),
                 txtCorreoElectronico.getText(),
-                dpFecha.getValue().toString(),
+                fechaNacimiento,
                 txtDireccion.getText(),
                 txtEspecialidad.getText(),
-                Integer.parseInt(txtExperiencia.getText()),
+                experiencia,
                 new ArrayList<CitaDto>());
     }
 
@@ -270,6 +273,11 @@ public class DoctorViewController extends BaseViewController implements IBaseVie
         DoctorDto doctorDto = construirDoctor();
         if (doctorSeleccionado != null) {
             if (validarDatos(doctorDto)) {
+                if (!hayCambios(doctorSeleccionado, doctorDto)) {
+                    mostrarMensaje("Error doctor", "Sin cambios",
+                            "No se puede actualizar el doctor sin cambios", Alert.AlertType.ERROR);
+                    return;
+                }
                 int selectedIndex = tblDoctor.getSelectionModel().getSelectedIndex();
                 doctorActualizado = doctorController.actualizar(doctorSeleccionado.documento(), doctorDto);
                 if (doctorActualizado) {
@@ -284,10 +292,21 @@ public class DoctorViewController extends BaseViewController implements IBaseVie
                     mostrarMensaje("Error doctor", "Doctor no actualizado",
                             "El doctor no pudo ser actualizado", Alert.AlertType.ERROR);
                 }
-            } else {
-                mostrarMensaje("Error doctor", "Datos inválidos",
-                        "Por favor, ingrese datos válidos", Alert.AlertType.ERROR);
             }
+        } else {
+            mostrarMensaje("Error doctor", "Doctor no seleccionado",
+                    "Por favor, seleccione un doctor", Alert.AlertType.ERROR);
         }
+    }
+
+    private boolean hayCambios(DoctorDto doctorSeleccionado, DoctorDto doctorDto) {
+        return !doctorSeleccionado.nombre().equals(doctorDto.nombre()) ||
+                !doctorSeleccionado.documento().equals(doctorDto.documento()) ||
+                !doctorSeleccionado.fechaNacimiento().equals(doctorDto.fechaNacimiento()) ||
+                !doctorSeleccionado.direccion().equals(doctorDto.direccion()) ||
+                !doctorSeleccionado.telefono().equals(doctorDto.telefono()) ||
+                !doctorSeleccionado.correo().equals(doctorDto.correo()) ||
+                !doctorSeleccionado.especialidad().equals(doctorDto.especialidad()) ||
+                doctorSeleccionado.experiencia() != doctorDto.experiencia();
     }
 }

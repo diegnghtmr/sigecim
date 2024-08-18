@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="10b11bc9-de8b-44e6-916c-aefcf577c807" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/ModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/ModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/utils/SigecimUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/utils/SigecimUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/CitaViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/CitaViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/DoctorViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/DoctorViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/PacienteViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/PacienteViewController.java" afterDir="false" />
@@ -181,7 +183,7 @@
       <workItem from="1723797584423" duration="2657000" />
       <workItem from="1723841949637" duration="976000" />
       <workItem from="1723842962407" duration="5008000" />
-      <workItem from="1723924566623" duration="8062000" />
+      <workItem from="1723924566623" duration="14829000" />
     </task>
     <servers />
   </component>
@@ -193,12 +195,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/PacienteViewController.java</url>
-          <line>196</line>
+          <line>200</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/viewController/PacienteViewController.java</url>
-          <line>194</line>
+          <line>198</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -208,7 +210,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/co/edu/uniquindio/sigecim/sigecimapp/controller/ModelFactory.java</url>
-          <line>125</line>
+          <line>122</line>
           <properties class="co.edu.uniquindio.sigecim.sigecimapp.controller.ModelFactory" method="agregarPaciente">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

@@ -25,6 +25,7 @@ public class ModelFactory {
 
         private static final ModelFactory eINSTANCE = new ModelFactory();
 
+
     }
     public static ModelFactory getInstance(){
         return SingletonHolder.eINSTANCE;
@@ -35,7 +36,6 @@ public class ModelFactory {
     private void cargarDatosBase() {
         sigecim = SigecimUtils.inicializarDatos();
     }
-
     public List<String> obtenerHorariosDisponibles() {
         return SigecimUtils.obtenerHorariosDisponibles();
     }
@@ -77,9 +77,6 @@ public class ModelFactory {
             return false;
         }
     }
-
-
-
 
     public List<DoctorDto> obtenerDoctores() {
         return sigecimMapper.getDoctoresDto(sigecim.getListaDoctores());

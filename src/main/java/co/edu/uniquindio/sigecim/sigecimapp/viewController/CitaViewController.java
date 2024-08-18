@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.function.Function;
 
 public class CitaViewController extends BaseViewController implements IBaseViewController<CitaDto> {
@@ -184,6 +185,8 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
         }
     }
 
+// CitaViewController.java
+
     public boolean validarDatos(CitaDto citaDto) {
         String mensaje = "";
         if (citaDto.fecha() == null || citaDto.fecha().isEmpty()) {
@@ -201,13 +204,24 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
         if (citaDto.motivo() == null || citaDto.motivo().isEmpty()) {
             mensaje += "El motivo es obligatorio\n";
         }
-        if (mensaje.isEmpty()) {
-            return true;
-        } else {
-            mostrarMensaje("Notificación cita",
-                    "Datos inválidos", mensaje, Alert.AlertType.WARNING);
+        if (!mensaje.isEmpty()) {
+            mostrarMensaje("Notificación cita", "Datos inválidos", mensaje, Alert.AlertType.WARNING);
             return false;
         }
+        return esCitaValida(citaDto);
+    }
+
+    private boolean esCitaValida(CitaDto citaDto) {
+        LocalDate fechaCita = LocalDate.parse(citaDto.fecha());
+        LocalTime horaCita = LocalTime.parse(citaDto.hora());
+        LocalDate fechaActual = LocalDate.now();
+        LocalTime horaActual = LocalTime.now();
+
+        if (fechaCita.isBefore(fechaActual) || (fechaCita.isEqual(fechaActual) && horaCita.isBefore(horaActual))) {
+            mostrarMensaje("Notificación cita", "Fecha y hora inválidas", "La cita debe ser hoy o en una fecha y hora futura", Alert.AlertType.WARNING);
+            return false;
+        }
+        return true;
     }
 
     public void limpiarCampos(){
@@ -235,15 +249,13 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
                 mostrarMensaje("Error cita", "Cita no agregada",
                         "La cita no pudo ser agregada", Alert.AlertType.ERROR);
             }
-        } else {
-            mostrarMensaje("Error cita", "Datos inválidos",
-                    "Por favor, ingrese datos válidos", Alert.AlertType.ERROR);
         }
     }
 
     private CitaDto construirCitaDto() {
+        String fecha = dpFecha.getValue() != null ? dpFecha.getValue().toString() : "";
         return new CitaDto(
-                dpFecha.getValue().toString(),
+                fecha,
                 cbHora.getValue(),
                 txtaMotivo.getText(),
                 cbPaciente.getValue(),
@@ -277,6 +289,11 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
         CitaDto citaDto = construirCitaDto();
         if (citaSeleccionada != null) {
             if (validarDatos(citaDto)) {
+                if (!hayCambios(citaSeleccionada, citaDto)) {
+                    mostrarMensaje("Error cita", "Sin cambios",
+                            "No se puede actualizar la cita sin cambios", Alert.AlertType.ERROR);
+                    return;
+                }
                 int selectedIndex = tblCita.getSelectionModel().getSelectedIndex();
                 citaActualizada = citaController.actualizar(citaSeleccionada, citaDto);
                 if (citaActualizada) {
@@ -291,10 +308,18 @@ public class CitaViewController extends BaseViewController implements IBaseViewC
                     mostrarMensaje("Error cita", "Cita no actualizada",
                             "La cita no pudo ser actualizada", Alert.AlertType.ERROR);
                 }
-            } else {
-                mostrarMensaje("Error cita", "Datos inválidos",
-                        "Por favor, ingrese datos válidos", Alert.AlertType.ERROR);
             }
+        } else {
+            mostrarMensaje("Error cita", "Cita no seleccionada",
+                    "Por favor, seleccione una cita para actualizar", Alert.AlertType.ERROR);
         }
+    }
+
+    private boolean hayCambios(CitaDto citaSeleccionada, CitaDto citaDto) {
+        return !citaSeleccionada.fecha().equals(citaDto.fecha()) ||
+                !citaSeleccionada.hora().equals(citaDto.hora()) ||
+                !citaSeleccionada.doctor().equals(citaDto.doctor()) ||
+                !citaSeleccionada.paciente().equals(citaDto.paciente()) ||
+                !citaSeleccionada.motivo().equals(citaDto.motivo());
     }
 }
