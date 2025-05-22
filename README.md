@@ -9,8 +9,6 @@ Currently, SIGECIM aims to support the following features:
 *   🧑‍⚕️ **Employee Management:** Manage hospital staff records, roles, and schedules.
 *   🩺 **Patient Registration:** Register new patients and manage their information.
 *   🗓️ **Appointment Scheduling:** Schedule and manage patient appointments with doctors.
-*   📄 **Medical Records:** (Planned) Securely store and access patient medical history.
-*   💊 **Prescription Management:** (Planned) Manage and track patient prescriptions.
 
 ## Technologies Used 💻⚙️
 
