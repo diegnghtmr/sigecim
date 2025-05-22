@@ -27,7 +27,7 @@ To get SIGECIM up and running on your local machine, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/diegnghtmr/sigecim.git
     cd sigecim-app
     ```
 2.  **Ensure you have Java 21 and Maven installed.** You can check your Java version with `java -version` and Maven with `mvn -version`.
